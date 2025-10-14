@@ -13,7 +13,12 @@ class Festival: PanacheEntity() { // Full Fetch
 
     var description: String? = null
 
-    @ManyToMany // Many To Many (Bridge table)
+    @ManyToMany(fetch = FetchType.LAZY) // Many To Many (Bridge table)
+    @JoinTable(
+        name = "festival_performer",
+        joinColumns = [JoinColumn(name="festival_id")],
+        inverseJoinColumns = [JoinColumn(name="performer_id")]
+    )
     val performers: MutableList<Performer> = mutableListOf()
 
     @ManyToOne(fetch = FetchType.LAZY)
