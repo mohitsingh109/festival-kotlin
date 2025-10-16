@@ -4,5 +4,5 @@ import io.quarkus.hibernate.orm.panache.kotlin.PanacheRepository
 import jakarta.enterprise.context.ApplicationScoped
 import org.example.com.festival.entity.Venue
 
-@ApplicationScoped
+@ApplicationScoped // DI
 class VenueRepository : PanacheRepository<Venue>

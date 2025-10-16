@@ -1,0 +1,12 @@
+# This help you to test you system in local
+
+version: "3.9"
+services:
+  festival-db:
+    image: postgres:16.10-alpine3.22
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: festival
+    ports:
+      - "5003:5432" # Port mapping System Port: 5003 that connet with docker container port 5432

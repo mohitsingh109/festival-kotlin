@@ -23,8 +23,8 @@ dependencies {
     implementation("io.quarkus:quarkus-jackson:3.28.3")
     implementation("io.quarkus:quarkus-hibernate-validator:3.28.3") // This is giving the Size function that does the validation of min, max
     implementation("io.quarkus:quarkus-kotlin:3.28.3")
-    implementation("org.mapstruct:mapstruct:1.6.3")
-    implementation("org.mapstruct:mapstruct-processor:1.6.3")
+    implementation("org.mapstruct:mapstruct:1.6.3") // Use to map field from one object to other
+    implementation("org.mapstruct:mapstruct-processor:1.6.3") // Build folder it will create a implementation
     implementation("io.quarkus:quarkus-hibernate-orm-panache-kotlin:3.28.3")  // This is for doing database stuff like auto create table or mapping DB row wih kotlin object
     testImplementation(kotlin("test"))
     testImplementation("io.quarkus:quarkus-junit5:3.28.3")

@@ -11,3 +11,8 @@ class UserAccountRepository : PanacheRepository<UserAccount> {
 
 // JPA (save, find by pk, delete by pk)  ==> Hibernates (ORM)
 //findByUsername("abc")
+
+
+// Hibernate (ORM) --> SQL Query <==> Object
+// JDBC "select * from " ==> ResultSet ===> Parse ResultSet.get("name")
+//JPA ---> Jpa is a wrapper on---->Hibernate (ORM) --- is a wrapper on ---> JDBC(Low level API)
