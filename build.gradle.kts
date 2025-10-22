@@ -1,5 +1,9 @@
 plugins {
     kotlin("jvm") version "2.1.0"
+    kotlin("plugin.allopen") version "2.0.20" // make classes open so we can use the (@Entity)
+    kotlin("plugin.jpa") version "2.0.20" // JPA + Kotlin Integration
+    kotlin("kapt")  version "2.0.20" // Kotlin annotation processing tool
+    id("io.quarkus") version "3.20.2" // we'll use this to run the application
 }
 
 group = "org.example"
@@ -28,7 +32,7 @@ dependencies {
     implementation("io.quarkus:quarkus-hibernate-orm-panache-kotlin:3.28.3")  // This is for doing database stuff like auto create table or mapping DB row wih kotlin object
     implementation("io.quarkus:quarkus-jdbc-postgresql")
     implementation("io.quarkus:quarkus-hibernate-validator")
-
+    implementation("io.quarkus:quarkus-resteasy-jsonb:3.15.6")
     testImplementation(kotlin("test"))
     testImplementation("io.quarkus:quarkus-junit5:3.28.3")
 }
@@ -39,4 +43,10 @@ tasks.test {
 
 kotlin {
     jvmToolchain(17)
+}
+
+allOpen {
+    annotation("jakarta.persistence.Entity")
+    annotation("jakarta.persistence.MappedSuperClass")
+    // ...
 }
