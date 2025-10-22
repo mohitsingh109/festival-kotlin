@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "2.0.21"
+    kotlin("jvm") version "2.1.0"
 }
 
 group = "org.example"
@@ -26,6 +26,9 @@ dependencies {
     implementation("org.mapstruct:mapstruct:1.6.3") // Use to map field from one object to other
     implementation("org.mapstruct:mapstruct-processor:1.6.3") // Build folder it will create a implementation
     implementation("io.quarkus:quarkus-hibernate-orm-panache-kotlin:3.28.3")  // This is for doing database stuff like auto create table or mapping DB row wih kotlin object
+    implementation("io.quarkus:quarkus-jdbc-postgresql")
+    implementation("io.quarkus:quarkus-hibernate-validator")
+
     testImplementation(kotlin("test"))
     testImplementation("io.quarkus:quarkus-junit5:3.28.3")
 }
@@ -33,6 +36,7 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(17)
 }
