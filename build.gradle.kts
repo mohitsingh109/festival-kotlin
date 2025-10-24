@@ -24,13 +24,14 @@ dependencies {
     implementation(enforcedPlatform("io.quarkus:quarkus-bom:3.28.3"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20") // Onion
     implementation("io.quarkus:quarkus-arc:3.28.3")
-    implementation("io.quarkus:quarkus-jackson:3.28.3")
+    implementation("io.quarkus:quarkus-jackson:3.28.3") // Json String to Object or vice versa
     implementation("io.quarkus:quarkus-hibernate-validator:3.28.3") // This is giving the Size function that does the validation of min, max
     implementation("io.quarkus:quarkus-kotlin:3.28.3")
+    implementation("io.quarkus:quarkus-liquibase")
     implementation("org.mapstruct:mapstruct:1.6.3") // Use to map field from one object to other
-    implementation("org.mapstruct:mapstruct-processor:1.6.3") // Build folder it will create a implementation
+    kapt("org.mapstruct:mapstruct-processor:1.6.3") // Build folder it will create a implementation
     implementation("io.quarkus:quarkus-hibernate-orm-panache-kotlin:3.28.3")  // This is for doing database stuff like auto create table or mapping DB row wih kotlin object
-    implementation("io.quarkus:quarkus-jdbc-postgresql")
+    implementation("io.quarkus:quarkus-jdbc-postgresql") // this one is creating the postgresql as test container
     implementation("io.quarkus:quarkus-hibernate-validator")
     implementation("io.quarkus:quarkus-resteasy-jsonb:3.15.6")
     testImplementation(kotlin("test"))
@@ -50,3 +51,8 @@ allOpen {
     annotation("jakarta.persistence.MappedSuperClass")
     // ...
 }
+
+//Json String to Object or vice versa
+// Use reflection
+// 1. create object with default constructor
+// 2. call the setter to set the values
