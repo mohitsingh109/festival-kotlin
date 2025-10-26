@@ -7,10 +7,13 @@ import jakarta.persistence.*
 @Table(name = "festival")
 class Festival: PanacheEntity() { // Full Fetch
 
+    @Column(nullable = false)
     lateinit var name: String
 
+    @Column(nullable = false)
     lateinit var theme: String
 
+    @Column(nullable = true)
     var description: String? = null
 
     @ManyToMany(fetch = FetchType.LAZY) // Many To Many (Bridge table)

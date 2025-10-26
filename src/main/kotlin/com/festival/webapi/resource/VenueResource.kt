@@ -31,8 +31,8 @@ class VenueResource(
     fun getVenueById(@PathParam("id") id: Long) = mapper.toDto(service.findVenueById(id))
 
     @POST
-    fun create(dto: VenueRequestDto): Response {
-        print(dto)
+    fun create(@Valid dto: VenueRequestDto): Response {
+        println("Received DTO: $dto")
         val entity = mapper.toEntity(dto)
         val saved = service.create(entity)
         return Response.status(Response.Status.CREATED)

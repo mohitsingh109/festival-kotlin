@@ -1,0 +1,8 @@
+
+-- changeset aman:003
+CREATE TABLE IF NOT EXISTS performer(
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255) UNIQUE NOT NULL,
+    genre VARCHAR(255) NOT NULL,
+    about VARCHAR(255) NOT NULL
+);

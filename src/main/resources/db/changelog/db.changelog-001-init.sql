@@ -1,0 +1,8 @@
+
+-- changeset mohit:001
+CREATE TABLE IF NOT EXISTS venue(
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255) UNIQUE NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    capacity INTEGER NOT NULL
+);
