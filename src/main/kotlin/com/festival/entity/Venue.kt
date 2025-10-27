@@ -1,6 +1,7 @@
 package org.example.com.festival.entity
 
 import io.quarkus.hibernate.orm.panache.kotlin.PanacheEntity
+import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType

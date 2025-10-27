@@ -35,6 +35,7 @@ dependencies {
     implementation("io.quarkus:quarkus-hibernate-orm-panache-kotlin:3.28.3")  // This is for doing database stuff like auto create table or mapping DB row wih kotlin object
     implementation("io.quarkus:quarkus-jdbc-postgresql") // this one is creating the postgresql as test container
     implementation("io.quarkus:quarkus-hibernate-validator")
+    implementation("at.favre.lib:bcrypt:0.10.2")
     testImplementation(kotlin("test"))
     testImplementation("io.quarkus:quarkus-junit5:3.28.3")
 }
