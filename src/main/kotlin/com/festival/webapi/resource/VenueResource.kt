@@ -30,6 +30,7 @@ class VenueResource(
     @Path("{id}")
     fun getVenueById(@PathParam("id") id: Long) = mapper.toDto(service.findVenueById(id))
 
+    // TODO: Modify the request payload to take user id as well
     @POST
     fun create(@Valid dto: VenueRequestDto): Response {
         println("Received DTO: $dto")
