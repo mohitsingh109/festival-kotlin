@@ -1,0 +1,4 @@
+
+-- changeset 006
+ALTER TABLE PERFORMER
+ADD COLUMN user_id BIGINT;

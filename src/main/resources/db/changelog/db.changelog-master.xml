@@ -11,5 +11,7 @@
     <include file="db/changelog/db.changelog-003-create-performer.sql" author="Karan" relativeToChangelogFile="false" />
     <include file="db/changelog/db.changelog-004-bridge_table.sql" author="Arun" relativeToChangelogFile="false" />
     <include file="db/changelog/db.changelog-005-user_account.sql" author="Test" relativeToChangelogFile="false" />
-
+    <include file="db/changelog/db.changelog-006-alter_table_performer.sql" author="AD" relativeToChangelogFile="false" />
+    <include file="db/changelog/db.changelog-007-alter_table_venue.sql" author="AD" relativeToChangelogFile="false" />
+    <include file="db/changelog/db.changelog-008-add_fk_constraints.sql" author="AD" relativeToChangelogFile="false" />
 </databaseChangeLog>

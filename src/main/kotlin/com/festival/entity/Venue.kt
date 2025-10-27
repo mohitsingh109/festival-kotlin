@@ -3,6 +3,7 @@ package org.example.com.festival.entity
 import io.quarkus.hibernate.orm.panache.kotlin.PanacheEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
+import jakarta.persistence.FetchType
 import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
 import jakarta.persistence.Table
@@ -29,7 +30,8 @@ class Venue: PanacheEntity(){
     @Column(nullable = false)
     var capacity: Int = 1
 
-//    @ManyToOne // Many Venue can be created by one user
-//    @JoinColumn(name = "created_by_id") // fk in venue table this will be use to perform join query // TODO We'll understand it later
-//    var createdBy: UserAccount? = null
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "created_by_id", nullable = false)
+    var createdBy: UserAccount? = null
+
 }

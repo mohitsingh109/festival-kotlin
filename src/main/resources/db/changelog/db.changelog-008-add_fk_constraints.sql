@@ -1,0 +1,8 @@
+
+
+-- changeset 008
+ALTER TABLE VENUE
+ADD CONSTRAINT fk_venue_created_by_id FOREIGN KEY (created_by_id) REFERENCES USER_ACCOUNT(id);
+
+ALTER TABLE PERFORMER
+ADD CONSTRAINT fk_performer_user_id FOREIGN KEY (user_id) REFERENCES USER_ACCOUNT(id);

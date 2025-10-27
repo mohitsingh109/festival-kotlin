@@ -22,9 +22,10 @@ class Performer: PanacheEntity() {
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "performers") // mappedBy = "performers" don't create your but use the join of performers inside festival entity
     var festivals: MutableList<Festival> = mutableListOf()
 
-//    @ManyToOne
-//    @JoinColumn(name = "created_by_id") // fk in venue table this will be use to perform join query // TODO We'll understand it later
-//    var createdBy: UserAccount? = null
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false) // fk in UserAccount Table
+    var createdBy: UserAccount? = null
+
 }
 
 // Hibernates (ORM) ===> Java Object/ Kotlin Object ===> Convert to SQL query ==> Execute in DB
