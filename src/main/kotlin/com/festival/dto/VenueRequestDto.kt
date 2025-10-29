@@ -14,5 +14,7 @@ data class VenueRequestDto(
 
     @field: NotNull(message = "Capacity can't be null")
     @field:Min(1)
-    val capacity: Int? = null
+    val capacity: Int? = null,
+
+    val userId: Long? = null
 )

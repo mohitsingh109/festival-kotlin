@@ -34,8 +34,7 @@ class VenueResource(
     @POST
     fun create(@Valid dto: VenueRequestDto): Response {
         println("Received DTO: $dto")
-        val entity = mapper.toEntity(dto)
-        val saved = service.create(entity)
+        val saved = service.create(dto)
         return Response.status(Response.Status.CREATED)
             .entity(mapper.toDto(saved))
             .build()
