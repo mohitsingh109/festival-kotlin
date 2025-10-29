@@ -31,7 +31,7 @@ class Venue: PanacheEntity(){
     @Column(nullable = false)
     var capacity: Int = 1
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "created_by_id", nullable = false)
     var createdBy: UserAccount? = null
 

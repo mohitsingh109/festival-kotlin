@@ -18,7 +18,8 @@ class VenueService(private val venueRepository: VenueRepository,
 
     // find a venue
     fun findVenueById(id: Long): Venue {
-        return venueRepository.findById(id) ?: throw  NoSuchElementException("Venue $id not found")
+        val venue = venueRepository.findById(id)
+        return venue ?: throw  NoSuchElementException("Venue $id not found")
     }
 
     // create venue
