@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: festival-app
+  labels:
+    app: festival
+spec:
+  replicas: 1 # I need only one pod
+  selector:
+    matchLabels:
+      app: festival
+  template:
+    metadata:
+      labels:
+        app: festival
+    spec:
+      containers:
+        - name: festival-app
+          image: festivalacr.azurecr.io/festival-app:1.0.0
+          ports:
+            - containerPort: 9000
+          env:
+            - name: JDBC_URL
+              value: jdbc:postgresql://localhost:5443/kdg
+
