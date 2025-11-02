@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: festival-service
+  labels:
+    name: festival
+spec:
+  selector:
+    app: festival
+  ports:
+    - protocol: TCP
+      port: 80 # http
+      targetPort: 9000
+  type: ClusterIP
