@@ -16,10 +16,14 @@ spec:
     spec:
       containers:
         - name: festival-app
-          image: festivalacr.azurecr.io/festival-app:1.0.0
+          image: festivalacr.azurecr.io/festival-app:1.0.1
           ports:
             - containerPort: 9000
           env:
-            - name: JDBC_URL
-              value: jdbc:postgresql://localhost:5443/kdg
+            - name: QUARKUS_DB_USERNAME
+              value: postgres
+            - name: QUARKUS_DB_PASSWORD
+              value: postgres
+            - name: QUARKUS_JDBC_URL
+              value: jdbc:postgresql://postgres-service:5432/festival
 
